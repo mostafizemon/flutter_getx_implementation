@@ -36,12 +36,24 @@ class _HomescreenState extends State<Homescreen> {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Get.find<Controller>().increment();
-              },
-              child: const Text("Increase"),
-            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Get.find<Controller>().increment();
+                  },
+                  child: const Text("+", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                ),
+                const SizedBox(width: 20,),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.find<Controller>().decrement();
+                  },
+                  child: const Text("-", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                ),
+              ],
+            )
           ],
         ),
       ),
